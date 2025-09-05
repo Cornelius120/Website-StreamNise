@@ -77,3 +77,49 @@
 #player #playerThumbnail {
   flex-shrink: 0;
 }
+
+/* ============================================= */
+/* == REVISI DARI GEMINI == */
+/* ============================================= */
+
+/* 1. PERBAIKAN SEARCH BAR */
+/* Mencegah browser mengubah warna background input saat autofill */
+#searchInput:-webkit-autofill,
+#searchInput:-webkit-autofill:hover,
+#searchInput:-webkit-autofill:focus,
+#searchInput:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #282828 inset !important; /* Menimpa background putih */
+  -webkit-text-fill-color: #fff !important; /* Menjaga warna teks tetap putih */
+  transition: background-color 5000s ease-in-out 0s; /* Trik untuk menunda perubahan style browser */
+}
+
+/* Memastikan style focus konsisten dan tidak berbackground putih */
+#searchInput:focus {
+  background-color: #282828; /* Menjaga background tetap gelap saat di-fokus */
+}
+
+/* 2. PERBAIKAN LAYOUT KARTU MUSIK */
+/* Membuat semua baris di grid memiliki tinggi yang sama (setinggi kartu tertinggi) */
+#songList {
+  grid-auto-rows: 1fr;
+}
+
+/* Membuat kartu mengisi penuh sel gridnya */
+.song-card {
+  height: 100%;
+}
+
+/* Memastikan gambar thumbnail benar-benar square dan proporsional */
+.song-card img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Membuat kontainer teks (judul, artis, dll.) mengisi sisa ruang di kartu */
+.song-card > div:last-child {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
