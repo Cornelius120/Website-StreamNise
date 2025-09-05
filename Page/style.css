@@ -1,0 +1,79 @@
+/* Mengimpor kelas dasar dari Tailwind untuk efisiensi */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/base.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/components.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/utilities.min.css");
+
+/* CSS Kustom dan Penyesuaian */
+#musicPlayerContainer {
+  font-family: "Inter", sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar Styling */
+#musicPlayerContainer ::-webkit-scrollbar {
+  width: 8px;
+}
+#musicPlayerContainer ::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+#musicPlayerContainer ::-webkit-scrollbar-thumb {
+  background: #4f4f4f;
+  border-radius: 10px;
+}
+#musicPlayerContainer ::-webkit-scrollbar-thumb:hover {
+  background: #6a6a6a;
+}
+
+/* Animasi untuk sorotan permalink */
+@keyframes permalink-highlight {
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+#musicPlayerContainer .highlight {
+  animation: permalink-highlight 2s ease-out;
+}
+
+/* Style untuk progress bar slider */
+#musicPlayerContainer input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #1db954; /* Warna hijau ala Spotify */
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -5px;
+  transition: background 0.2s ease;
+}
+#musicPlayerContainer input[type="range"]:hover::-webkit-slider-thumb {
+  background: #1ed760;
+}
+
+/* Style untuk ikon yang aktif */
+#musicPlayerContainer .icon-active svg {
+  fill: #1db954;
+  color: #1db954;
+}
+
+/* FIX untuk judul lagu dan artis yang panjang */
+#musicPlayerContainer .truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Menyesuaikan min-width untuk info lagu agar tidak ter-squish */
+#player .min-w-0 {
+  min-width: 0;
+}
+
+/* Menambahkan flex-shrink-0 ke gambar player agar ukurannya tetap */
+#player #playerThumbnail {
+  flex-shrink: 0;
+}
