@@ -6,6 +6,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // =================================================================================
   const songsData = [
     {
+      id: "song004",
+      title: "Golden",
+      artist: "KPop Demon Hunters",
+      genre: "Pop",
+      thumbnail: "https://cdn.imgpile.com/f/nsuYCbM_xl.jpg",
+      src: [
+        "https://vidcache.net:8161/static/ee2260b6005c7428f3c0659bf1c4be5a2a1c7c17/“Golden” Official Lyric Video ｜ KPop Demon Hunters ｜ Sony Animation.m4a",
+      ],
+    },
+    {
       id: "song001",
       title: "Blue",
       artist: "Yung Kai",
